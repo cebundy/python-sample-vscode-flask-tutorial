@@ -21,8 +21,11 @@ variables:
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
+  My.BuildVar: 'ceb-build'
 
   pythonVersion: '3.11'
+
+name: $(My.BuildVar)_$(SourceBranchName)_$(Date:yyyyMMdd).$(Rev:r)
 
 stages:
 - stage: Build
