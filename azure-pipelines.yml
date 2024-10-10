@@ -25,7 +25,7 @@ variables:
 
   pythonVersion: '3.11'
 
-name: $(My.BuildVar)_\$(SourceBranchName)_$(Date:yyyyMMdd).$(Rev:r)
+name: $(My.BuildVar)_$(SourceBranchName)_$(Date:yyyyMMdd).$(Rev:r)
 # name: $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:r)
 
 stages:
