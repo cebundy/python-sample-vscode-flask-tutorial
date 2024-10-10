@@ -25,7 +25,8 @@ variables:
 
   pythonVersion: '3.11'
 
-name: $(My.BuildVar)_$(SourceBranchName)_$(Date:yyyyMMdd).$(Rev:r)
+name: $(My.BuildVar)_\$(SourceBranchName)_$(Date:yyyyMMdd).$(Rev:r)
+# name: $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:r)
 
 stages:
 - stage: Build
@@ -35,6 +36,7 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - script: echo '$(Build.BuildNumber)'
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '$(pythonVersion)'
